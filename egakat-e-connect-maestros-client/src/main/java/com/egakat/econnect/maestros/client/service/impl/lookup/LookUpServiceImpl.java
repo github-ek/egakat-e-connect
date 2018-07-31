@@ -241,4 +241,9 @@ public class LookUpServiceImpl implements LookUpService {
 		}
 		throw e;
 	}
+
+	@Override
+	public void cacheEvict() {
+		
+	}
 }

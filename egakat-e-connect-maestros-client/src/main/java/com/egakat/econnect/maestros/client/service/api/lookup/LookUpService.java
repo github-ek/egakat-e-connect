@@ -1,8 +1,11 @@
 package com.egakat.econnect.maestros.client.service.api.lookup;
 
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 
-public interface LookUpService {
+import com.egakat.core.web.client.service.api.CacheEvictSupported;
+
+public interface LookUpService extends CacheEvictSupported {
 
 	@Cacheable(cacheNames = "clienteId-by-codigo", sync = true)
 	Long findClienteIdByCodigo(String codigo);
@@ -49,4 +52,10 @@ public interface LookUpService {
 	@Cacheable(cacheNames = "subestadosInventarioId-by-codigo", sync = true)
 	String findSubestadoInventarioIdByCodigo(String codigo);
 
+	@CacheEvict(cacheNames = { "clienteId-by-codigo", "clienteId-by-numeroIdentificacion", "clienteId-by-codigoWms",
+			"servicioId-by-codigo", "canalId-by-codigo", "tercerId-by-numeroIdentificacion", "puntoId-by-codigo",
+			"ciudadId-by-codigo", "ciudadId-by-nombreAlterno", "productoId-by-cliente-and-codigo",
+			"unidadMedidaId-de-recibo-by-producto-and-bodega", "unidadMedidaId-by-codigo", "bodegaId-by-codigo",
+			"estadosInventarioId-by-codigo", "subestadosInventarioId-by-codigo" }, allEntries = true)
+	void cacheEvict();
 }

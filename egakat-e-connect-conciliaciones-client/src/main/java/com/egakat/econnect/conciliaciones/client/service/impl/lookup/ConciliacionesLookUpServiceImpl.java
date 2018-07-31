@@ -33,4 +33,9 @@ public class ConciliacionesLookUpServiceImpl implements ConciliacionesLookUpServ
 		}
 		throw e;
 	}
+
+	@Override
+	public void cacheEvict() {
+		
+	}
 }
