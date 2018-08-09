@@ -19,7 +19,7 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.DynamicUpdate;
 
-import com.egakat.commons.domain.BaseEntity;
+import com.egakat.commons.domain.BusinessEntity;
 import com.egakat.core.domain.InactivableObject;
 import com.egakat.core.domain.ObjectWithCode;
 import com.egakat.econnect.maestros.enums.IdentificacionType;
@@ -37,9 +37,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AttributeOverride(name = "id", column = @Column(name = "id_cliente"))
-public class Cliente extends BaseEntity<Long> implements ObjectWithCode<Long>, InactivableObject {
-
-	private static final long serialVersionUID = 1L;
+public class Cliente extends BusinessEntity<Long> implements ObjectWithCode<Long>, InactivableObject {
 
 	@Column(name = "codigo")
 	@Size(max = 32)

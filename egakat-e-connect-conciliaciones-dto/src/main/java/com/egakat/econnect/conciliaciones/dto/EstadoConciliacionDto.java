@@ -8,7 +8,7 @@ import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.NumberFormat;
 
-import com.egakat.commons.dto.EntityDto;
+import com.egakat.commons.dto.BusinessEntityDto;
 import com.egakat.core.domain.InactivableObject;
 import com.egakat.core.domain.ObjectWithCode;
 import com.egakat.core.domain.SortableObject;
@@ -23,9 +23,7 @@ import lombok.ToString;
 @Setter
 @ToString(callSuper = true)
 @NoArgsConstructor
-public class EstadoConciliacionDto extends EntityDto<Long> implements  ObjectWithCode<Long> ,SortableObject, InactivableObject {
-
-	private static final long serialVersionUID = 1L;
+public class EstadoConciliacionDto extends BusinessEntityDto<Long> implements  ObjectWithCode<Long> ,SortableObject, InactivableObject {
 
 	@NotNull
 	@Size(max = 20)

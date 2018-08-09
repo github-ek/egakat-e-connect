@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.egakat.commons.dto.EntityDto;
+import com.egakat.commons.dto.BusinessEntityDto;
 import com.egakat.core.domain.InactivableObject;
 import com.egakat.core.domain.ObjectWithCode;
 
@@ -21,9 +21,7 @@ import lombok.ToString;
 @ToString(callSuper=true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class PuntoDto extends EntityDto<Long> implements ObjectWithCode<Long>, InactivableObject {
-
-	private static final long serialVersionUID = 1L;
+public class PuntoDto extends BusinessEntityDto<Long> implements ObjectWithCode<Long>, InactivableObject {
 
 	private long idTercero;
 

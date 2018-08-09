@@ -12,7 +12,7 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.DynamicUpdate;
 
-import com.egakat.commons.domain.BaseEntity;
+import com.egakat.commons.domain.BusinessEntity;
 import com.egakat.core.domain.InactivableObject;
 import com.egakat.core.domain.ObjectWithCode;
 
@@ -29,9 +29,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AttributeOverride(name = "id", column = @Column(name = "id_configuracion"))
-public class Configuracion extends BaseEntity<Long> implements ObjectWithCode<Long>, InactivableObject {
-
-	private static final long serialVersionUID = 1L;
+public class Configuracion extends BusinessEntity<Long> implements ObjectWithCode<Long>, InactivableObject {
 
 	@ManyToOne(fetch = FetchType.EAGER, optional = false)
 	@JoinColumn(name = "id_grupo_configuracion", nullable = false)

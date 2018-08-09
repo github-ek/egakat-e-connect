@@ -8,7 +8,7 @@ import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.NumberFormat;
 
-import com.egakat.commons.dto.EntityDto;
+import com.egakat.commons.dto.BusinessEntityDto;
 import com.egakat.core.domain.InactivableObject;
 import com.egakat.core.domain.ObjectWithCode;
 import com.egakat.core.domain.SortableObject;
@@ -25,9 +25,7 @@ import lombok.ToString;
 @ToString(callSuper=true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class PaisDto extends EntityDto<Long> implements ObjectWithCode<Long>, SortableObject, InactivableObject {
-
-	private static final long serialVersionUID = 1L;
+public class PaisDto extends BusinessEntityDto<Long> implements ObjectWithCode<Long>, SortableObject, InactivableObject {
 
 	@NotNull
 	@Size(max = 20)

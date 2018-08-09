@@ -14,7 +14,7 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.DynamicUpdate;
 
-import com.egakat.commons.domain.BaseEntity;
+import com.egakat.commons.domain.BusinessEntity;
 import com.egakat.core.domain.InactivableObject;
 import com.egakat.econnect.maestros.enums.IdentificacionType;
 
@@ -31,9 +31,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AttributeOverride(name = "id", column = @Column(name = "id_tercero"))
-public class Tercero extends BaseEntity<Long> implements InactivableObject {
-
-	private static final long serialVersionUID = 1L;
+public class Tercero extends BusinessEntity<Long> implements InactivableObject {
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "id_cliente", nullable = false)

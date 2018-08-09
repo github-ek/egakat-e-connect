@@ -40,8 +40,6 @@ import lombok.ToString;
 public class SubestadoInventario implements IdentifiedDomainObject<String>, SortableObject, InactivableObject,
 		VersionableObject, ObjectAuditableByUser {
 
-	private static final long serialVersionUID = 1L;
-
 	@Id
 	@NotEmpty
 	@Size(max = 25)

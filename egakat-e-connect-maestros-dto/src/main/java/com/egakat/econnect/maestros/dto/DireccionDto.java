@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.egakat.commons.dto.EntityDto;
+import com.egakat.commons.dto.BusinessEntityDto;
 import com.egakat.core.domain.InactivableObject;
 import com.egakat.econnect.maestros.enums.EstadoDireccionType;
 import com.egakat.econnect.maestros.enums.GeoCodificacionType;
@@ -23,9 +23,7 @@ import lombok.ToString;
 @ToString(callSuper=true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class DireccionDto extends EntityDto<Long> implements InactivableObject {
-
-	private static final long serialVersionUID = 1L;
+public class DireccionDto extends BusinessEntityDto<Long> implements InactivableObject {
 
 	@NotNull
 	private EstadoDireccionType estado;

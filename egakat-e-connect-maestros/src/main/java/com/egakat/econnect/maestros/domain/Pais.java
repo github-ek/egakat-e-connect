@@ -12,7 +12,7 @@ import javax.validation.constraints.Size;
 import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.format.annotation.NumberFormat;
 
-import com.egakat.commons.domain.BaseEntity;
+import com.egakat.commons.domain.BusinessEntity;
 import com.egakat.core.domain.InactivableObject;
 import com.egakat.core.domain.ObjectWithCode;
 import com.egakat.core.domain.SortableObject;
@@ -30,9 +30,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AttributeOverride(name = "id", column = @Column(name = "id_pais"))
-public class Pais extends BaseEntity<Long> implements ObjectWithCode<Long>, SortableObject, InactivableObject {
-
-	private static final long serialVersionUID = 1L;
+public class Pais extends BusinessEntity<Long> implements ObjectWithCode<Long>, SortableObject, InactivableObject {
 
 	@NotNull
 	@Size(max = 20)
