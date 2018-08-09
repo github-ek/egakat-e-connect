@@ -55,7 +55,7 @@ public class DepartamentoDto extends BusinessEntityDto<Long> implements ObjectWi
 			LocalDateTime fechaModificacion, long idPais, @NotNull @Size(max = 20) String codigo,
 			@NotNull @Size(max = 100) String nombre, @NotNull @Size(max = 100) String nombreAlterno, BigDecimal cx,
 			BigDecimal cy, int ordinal, boolean activo) {
-		super(id, version, creadoPor, fechaCreacion, modificadoPor, fechaModificacion);
+		super(id, version, fechaCreacion, creadoPor, fechaModificacion, modificadoPor);
 		this.idPais = idPais;
 		this.codigo = codigo;
 		this.nombre = nombre;

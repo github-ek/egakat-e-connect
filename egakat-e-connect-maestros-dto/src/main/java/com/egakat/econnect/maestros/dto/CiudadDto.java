@@ -59,7 +59,7 @@ public class CiudadDto extends BusinessEntityDto<Long> implements ObjectWithCode
 			LocalDateTime fechaModificacion, long idDepartamento, @NotNull @Size(max = 20) String codigo,
 			@NotNull @Size(max = 20) String codigoCentroPoblado, @NotNull @Size(max = 100) String nombre,
 			@NotNull @Size(max = 100) String nombreAlterno, BigDecimal cx, BigDecimal cy, int ordinal, boolean activo) {
-		super(id, version, creadoPor, fechaCreacion, modificadoPor, fechaModificacion);
+		super(id, version, fechaCreacion, creadoPor, fechaModificacion, modificadoPor);
 		this.idDepartamento = idDepartamento;
 		this.codigo = codigo;
 		this.codigoCentroPoblado = codigoCentroPoblado;

@@ -48,7 +48,7 @@ public class PuntoDto extends BusinessEntityDto<Long> implements ObjectWithCode<
 			LocalDateTime fechaModificacion, long idTercero, @NotNull @Size(max = 20) String codigo,
 			@NotNull @Size(max = 100) String nombre, long idCiudad, @NotNull @Size(max = 150) String direccion,
 			Long idDireccion, boolean activo) {
-		super(id, version, creadoPor, fechaCreacion, modificadoPor, fechaModificacion);
+		super(id, version, fechaCreacion, creadoPor, fechaModificacion, modificadoPor);
 		this.idTercero = idTercero;
 		this.codigo = codigo;
 		this.nombre = nombre;

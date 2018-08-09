@@ -48,7 +48,7 @@ public class PaisDto extends BusinessEntityDto<Long> implements ObjectWithCode<L
 	public PaisDto(Long id, int version, String creadoPor, LocalDateTime fechaCreacion, String modificadoPor,
 			LocalDateTime fechaModificacion, @NotNull @Size(max = 20) String codigo,
 			@NotNull @Size(max = 100) String nombre, BigDecimal cx, BigDecimal cy, int ordinal, boolean activo) {
-		super(id, version, creadoPor, fechaCreacion, modificadoPor, fechaModificacion);
+		super(id, version, fechaCreacion, creadoPor, fechaModificacion, modificadoPor);
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.cx = cx;

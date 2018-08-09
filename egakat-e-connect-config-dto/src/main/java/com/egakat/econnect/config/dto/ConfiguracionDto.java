@@ -37,7 +37,7 @@ public class ConfiguracionDto extends BusinessEntityDto<Long> implements ObjectW
 	public ConfiguracionDto(Long id, int version, String creadoPor, LocalDateTime fechaCreacion, String modificadoPor,
 			LocalDateTime fechaModificacion, long idGrupoConfiguracion, @NotNull @Size(max = 50) String codigo,
 			@NotNull @Size(max = 1000) String valor, boolean activo) {
-		super(id, version, creadoPor, fechaCreacion, modificadoPor, fechaModificacion);
+		super(id, version, fechaCreacion, creadoPor, fechaModificacion, modificadoPor);
 		this.idGrupoConfiguracion = idGrupoConfiguracion;
 		this.codigo = codigo;
 		this.valor = valor;

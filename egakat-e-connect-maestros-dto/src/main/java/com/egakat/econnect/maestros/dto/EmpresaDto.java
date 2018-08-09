@@ -59,7 +59,7 @@ public class EmpresaDto extends BusinessEntityDto<Long> implements ObjectWithCod
 			@NotNull @Size(max = 100) String nombre, @NotNull IdentificacionType tipoIdentificacion,
 			@NotNull @Size(max = 20) String numeroIdentificacion, @NotNull @Size(max = 1) String digitoVerificacion,
 			int ordinal, boolean activo) {
-		super(id, version, creadoPor, fechaCreacion, modificadoPor, fechaModificacion);
+		super(id, version, fechaCreacion, creadoPor, fechaModificacion, modificadoPor);
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.tipoIdentificacion = tipoIdentificacion;

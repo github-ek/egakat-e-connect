@@ -43,7 +43,7 @@ public class TerceroDto extends BusinessEntityDto<Long> implements InactivableOb
 			LocalDateTime fechaModificacion, long idCliente, @NotNull IdentificacionType tipoIdentificacion,
 			@NotNull @Size(max = 20) String numeroIdentificacion, @NotNull @Size(max = 100) String nombre,
 			boolean activo) {
-		super(id, version, creadoPor, fechaCreacion, modificadoPor, fechaModificacion);
+		super(id, version, fechaCreacion, creadoPor, fechaModificacion, modificadoPor);
 		this.idCliente = idCliente;
 		this.tipoIdentificacion = tipoIdentificacion;
 		this.numeroIdentificacion = numeroIdentificacion;

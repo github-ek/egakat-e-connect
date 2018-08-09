@@ -60,7 +60,7 @@ public class ClienteDto extends BusinessEntityDto<Long> implements ObjectWithCod
 			@NotNull @Size(max = 20) String numeroIdentificacion, @NotNull @Size(max = 1) String digitoVerificacion,
 			long idEmpresa, @NotNull @Size(max = 100) String codigoAlternoWms, boolean habilitadoConciliacion,
 			boolean activo) {
-		super(id, version, creadoPor, fechaCreacion, modificadoPor, fechaModificacion);
+		super(id, version, fechaCreacion, creadoPor, fechaModificacion, modificadoPor);
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.tipoIdentificacion = tipoIdentificacion;

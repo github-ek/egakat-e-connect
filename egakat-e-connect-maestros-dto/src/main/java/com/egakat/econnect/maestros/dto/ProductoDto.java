@@ -43,7 +43,7 @@ public class ProductoDto extends BusinessEntityDto<Long> implements ObjectWithCo
 	public ProductoDto(Long id, int version, String creadoPor, LocalDateTime fechaCreacion, String modificadoPor,
 			LocalDateTime fechaModificacion, long idCliente, @NotNull @Size(max = 50) String codigo,
 			@NotNull @Size(max = 250) String nombre, @NotNull @Size(max = 50) String tipoCobro, boolean activo) {
-		super(id, version, creadoPor, fechaCreacion, modificadoPor, fechaModificacion);
+		super(id, version, fechaCreacion, creadoPor, fechaModificacion, modificadoPor);
 		this.idCliente = idCliente;
 		this.codigo = codigo;
 		this.nombre = nombre;

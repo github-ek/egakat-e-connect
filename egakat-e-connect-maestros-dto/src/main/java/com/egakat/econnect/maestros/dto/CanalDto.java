@@ -50,7 +50,7 @@ public class CanalDto extends BusinessEntityDto<Long> implements ObjectWithCode<
 			LocalDateTime fechaModificacion, @NotNull @Size(max = 20) String codigo,
 			@NotNull @Size(max = 100) String nombre, @NotNull @Size(max = 200) String descripcion,
 			boolean predeterminado, int ordinal, boolean activo) {
-		super(id, version, creadoPor, fechaCreacion, modificadoPor, fechaModificacion);
+		super(id, version, fechaCreacion, creadoPor, fechaModificacion, modificadoPor);
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.descripcion = descripcion;

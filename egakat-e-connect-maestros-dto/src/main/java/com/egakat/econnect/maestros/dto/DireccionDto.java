@@ -77,7 +77,7 @@ public class DireccionDto extends BusinessEntityDto<Long> implements Inactivable
 			@NotNull @Size(max = 150) String direccionEstandarizada, BigDecimal cx, BigDecimal cy,
 			@NotNull @Size(max = 100) String zona, @NotNull @Size(max = 100) String localidad,
 			@NotNull @Size(max = 100) String barrio, boolean activo) {
-		super(id, version, creadoPor, fechaCreacion, modificadoPor, fechaModificacion);
+		super(id, version, fechaCreacion, creadoPor, fechaModificacion, modificadoPor);
 		this.estado = estado;
 		this.idCliente = idCliente;
 		this.terceroCodigoAlterno = terceroCodigoAlterno;

@@ -46,7 +46,7 @@ public class GrupoConfiguracionDto extends BusinessEntityDto<Long> implements Ob
 			String modificadoPor, LocalDateTime fechaModificacion, @NotNull @Size(max = 50) String codigo,
 			@NotNull @Size(max = 100) String nombre, @NotNull @Size(max = 200) String descripcion, int ordinal,
 			boolean activo) {
-		super(id, version, creadoPor, fechaCreacion, modificadoPor, fechaModificacion);
+		super(id, version, fechaCreacion, creadoPor, fechaModificacion, modificadoPor);
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
