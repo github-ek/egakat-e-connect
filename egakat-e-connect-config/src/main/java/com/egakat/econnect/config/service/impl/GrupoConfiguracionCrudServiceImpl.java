@@ -48,7 +48,7 @@ public class GrupoConfiguracionCrudServiceImpl extends CrudServiceImpl<GrupoConf
 	}
 
 	@Override
-	protected GrupoConfiguracion asEntity(GrupoConfiguracionDto model, GrupoConfiguracion entity) {
+	protected GrupoConfiguracion mergeEntity(GrupoConfiguracionDto model, GrupoConfiguracion entity) {
 
 		entity.setCodigo(model.getCodigo());
 		entity.setNombre(model.getNombre());

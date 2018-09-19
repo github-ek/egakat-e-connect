@@ -47,7 +47,7 @@ public class UnidadNegocioCrudServiceImpl extends CrudServiceImpl<UnidadNegocio,
 	}
 
 	@Override
-	protected UnidadNegocio asEntity(UnidadNegocioDto model, UnidadNegocio entity) {
+	protected UnidadNegocio mergeEntity(UnidadNegocioDto model, UnidadNegocio entity) {
 
 		entity.setCodigo(model.getCodigo());
 		entity.setNombre(model.getNombre());

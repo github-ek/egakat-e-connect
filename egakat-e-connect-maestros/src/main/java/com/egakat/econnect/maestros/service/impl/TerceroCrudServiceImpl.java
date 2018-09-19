@@ -52,7 +52,7 @@ public class TerceroCrudServiceImpl extends CrudServiceImpl<Tercero, TerceroDto,
 	}
 
 	@Override
-	protected Tercero asEntity(TerceroDto model, Tercero entity) {
+	protected Tercero mergeEntity(TerceroDto model, Tercero entity) {
 		val cliente = clienteRepository.getOne(model.getIdCliente());
 
 		entity.setCliente(cliente);

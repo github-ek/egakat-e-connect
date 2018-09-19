@@ -49,7 +49,7 @@ public class CanalCrudServiceImpl extends CrudServiceImpl<Canal, CanalDto, Long>
 	}
 
 	@Override
-	protected Canal asEntity(CanalDto model, Canal entity) {
+	protected Canal mergeEntity(CanalDto model, Canal entity) {
 
 		entity.setCodigo(model.getCodigo());
 		entity.setNombre(model.getNombre());

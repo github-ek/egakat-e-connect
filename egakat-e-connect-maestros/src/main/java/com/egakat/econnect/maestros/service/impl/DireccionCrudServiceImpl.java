@@ -66,7 +66,7 @@ public class DireccionCrudServiceImpl extends CrudServiceImpl<Direccion, Direcci
 	}
 
 	@Override
-	protected Direccion asEntity(DireccionDto model, Direccion entity) {
+	protected Direccion mergeEntity(DireccionDto model, Direccion entity) {
 		val cliente = clienteRepository.getOne(model.getIdCliente());
 		val ciudad = ciudadRepository.getOne(model.getIdCiudad());
 

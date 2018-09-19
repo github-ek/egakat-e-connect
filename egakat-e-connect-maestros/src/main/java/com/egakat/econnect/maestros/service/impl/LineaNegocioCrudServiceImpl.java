@@ -54,7 +54,7 @@ public class LineaNegocioCrudServiceImpl extends CrudServiceImpl<LineaNegocio, L
 	}
 
 	@Override
-	protected LineaNegocio asEntity(LineaNegocioDto model, LineaNegocio entity) {
+	protected LineaNegocio mergeEntity(LineaNegocioDto model, LineaNegocio entity) {
 		val unidadNegocio = unidadNegocioRepository.getOne(model.getIdUnidadNegocio());
 
 		entity.setUnidadNegocio(unidadNegocio);

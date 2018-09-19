@@ -47,7 +47,7 @@ public class UnidadMedidaCrudServiceImpl extends CrudServiceImpl<UnidadMedida, U
 	}
 
 	@Override
-	protected UnidadMedida asEntity(UnidadMedidaDto model, UnidadMedida entity) {
+	protected UnidadMedida mergeEntity(UnidadMedidaDto model, UnidadMedida entity) {
 
 		entity.setCodigo(model.getCodigo());
 		entity.setNombre(model.getNombre());

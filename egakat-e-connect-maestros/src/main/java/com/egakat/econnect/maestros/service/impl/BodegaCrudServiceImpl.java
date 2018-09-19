@@ -59,7 +59,7 @@ public class BodegaCrudServiceImpl extends CrudServiceImpl<Bodega, BodegaDto, Lo
 	}
 
 	@Override
-	protected Bodega asEntity(BodegaDto model, Bodega entity) {
+	protected Bodega mergeEntity(BodegaDto model, Bodega entity) {
 		val ciudad = ciudadRepository.getOne(model.getIdCiudad());
 		val direccion = direccionRepository.getOne(model.getIdDireccion());
 

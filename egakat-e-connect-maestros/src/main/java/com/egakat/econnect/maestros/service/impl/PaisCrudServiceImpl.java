@@ -48,7 +48,7 @@ public class PaisCrudServiceImpl extends CrudServiceImpl<Pais, PaisDto, Long> im
 	}
 
 	@Override
-	protected Pais asEntity(PaisDto model, Pais entity) {
+	protected Pais mergeEntity(PaisDto model, Pais entity) {
 
 		entity.setCodigo(model.getCodigo());
 		entity.setNombre(model.getNombre());

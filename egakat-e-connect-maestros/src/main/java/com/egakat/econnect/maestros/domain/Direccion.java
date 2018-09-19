@@ -16,7 +16,7 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.DynamicUpdate;
 
-import com.egakat.commons.domain.BusinessEntity;
+import com.egakat.commons.domain.AuditableEntity;
 import com.egakat.core.domain.InactivableObject;
 import com.egakat.econnect.maestros.enums.EstadoDireccionType;
 import com.egakat.econnect.maestros.enums.GeoCodificacionType;
@@ -34,7 +34,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AttributeOverride(name = "id", column = @Column(name = "id_direccion"))
-public class Direccion extends BusinessEntity<Long> implements InactivableObject {
+public class Direccion extends AuditableEntity<Long> implements InactivableObject {
 
 	@NotNull
 	@Enumerated(EnumType.STRING)

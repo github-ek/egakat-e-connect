@@ -44,7 +44,7 @@ public class SubestadoInventarioCrudServiceImpl extends
 	}
 
 	@Override
-	protected SubestadoInventario asEntity(SubestadoInventarioDto model, SubestadoInventario entity) {
+	protected SubestadoInventario mergeEntity(SubestadoInventarioDto model, SubestadoInventario entity) {
 
 		entity.setNombre(model.getNombre());
 		entity.setDescripcion(model.getDescripcion());

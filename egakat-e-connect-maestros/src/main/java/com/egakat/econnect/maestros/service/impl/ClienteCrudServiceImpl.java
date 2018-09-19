@@ -64,7 +64,7 @@ public class ClienteCrudServiceImpl extends CrudServiceImpl<Cliente, ClienteDto,
 	}
 
 	@Override
-	protected Cliente asEntity(ClienteDto model, Cliente entity) {
+	protected Cliente mergeEntity(ClienteDto model, Cliente entity) {
 		val empresa = empresaRepository.getOne(model.getIdEmpresa());
 
 		entity.setCodigo(model.getCodigo());

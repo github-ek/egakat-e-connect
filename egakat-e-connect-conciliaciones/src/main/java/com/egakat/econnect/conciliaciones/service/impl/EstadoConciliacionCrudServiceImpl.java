@@ -48,7 +48,7 @@ public class EstadoConciliacionCrudServiceImpl extends CrudServiceImpl<EstadoCon
 	}
 
 	@Override
-	protected EstadoConciliacion asEntity(EstadoConciliacionDto model, EstadoConciliacion entity) {
+	protected EstadoConciliacion mergeEntity(EstadoConciliacionDto model, EstadoConciliacion entity) {
 
 		entity.setCodigo(model.getCodigo());
 		entity.setNombre(model.getNombre());

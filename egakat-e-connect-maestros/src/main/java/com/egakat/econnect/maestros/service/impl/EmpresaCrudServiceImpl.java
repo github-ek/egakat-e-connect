@@ -48,7 +48,7 @@ public class EmpresaCrudServiceImpl extends CrudServiceImpl<Empresa, EmpresaDto,
 	}
 
 	@Override
-	protected Empresa asEntity(EmpresaDto model, Empresa entity) {
+	protected Empresa mergeEntity(EmpresaDto model, Empresa entity) {
 
 		entity.setCodigo(model.getCodigo());
 		entity.setNombre(model.getNombre());

@@ -61,7 +61,7 @@ public class ProductoCrudServiceImpl extends CrudServiceImpl<Producto, ProductoD
 	}
 
 	@Override
-	protected Producto asEntity(ProductoDto model, Producto entity) {
+	protected Producto mergeEntity(ProductoDto model, Producto entity) {
 		val cliente = clienteRepository.getOne(model.getIdCliente());
 
 		entity.setCliente(cliente);

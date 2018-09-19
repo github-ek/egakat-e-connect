@@ -54,7 +54,7 @@ public class TipoRemesaCrudServiceImpl extends CrudServiceImpl<TipoRemesa, TipoR
 	}
 
 	@Override
-	protected TipoRemesa asEntity(TipoRemesaDto model, TipoRemesa entity) {
+	protected TipoRemesa mergeEntity(TipoRemesaDto model, TipoRemesa entity) {
 		val unidadNegocio = unidadNegocioRepository.getOne(model.getIdUnidadNegocio());
 
 		entity.setUnidadNegocio(unidadNegocio);

@@ -56,7 +56,7 @@ public class DepartamentoCrudServiceImpl extends CrudServiceImpl<Departamento, D
 	}
 
 	@Override
-	protected Departamento asEntity(DepartamentoDto model, Departamento entity) {
+	protected Departamento mergeEntity(DepartamentoDto model, Departamento entity) {
 		val pais = paisRepository.getOne(model.getIdPais());
 
 		entity.setPais(pais);

@@ -45,7 +45,7 @@ public class EstadoInventarioCrudServiceImpl extends CrudServiceImpl<EstadoInven
 	}
 
 	@Override
-	protected EstadoInventario asEntity(EstadoInventarioDto model, EstadoInventario entity) {
+	protected EstadoInventario mergeEntity(EstadoInventarioDto model, EstadoInventario entity) {
 
 		entity.setId(model.getId());
 		entity.setNombre(model.getNombre());

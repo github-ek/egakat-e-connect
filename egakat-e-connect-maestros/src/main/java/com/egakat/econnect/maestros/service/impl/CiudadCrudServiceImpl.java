@@ -57,7 +57,7 @@ public class CiudadCrudServiceImpl extends CrudServiceImpl<Ciudad, CiudadDto, Lo
 	}
 
 	@Override
-	protected Ciudad asEntity(CiudadDto model, Ciudad entity) {
+	protected Ciudad mergeEntity(CiudadDto model, Ciudad entity) {
 		val departamento = departamentoRepository.getOne(model.getIdDepartamento());
 
 		entity.setDepartamento(departamento);

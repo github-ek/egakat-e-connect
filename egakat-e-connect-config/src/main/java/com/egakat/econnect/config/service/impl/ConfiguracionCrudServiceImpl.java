@@ -52,7 +52,7 @@ public class ConfiguracionCrudServiceImpl extends CrudServiceImpl<Configuracion,
 	}
 
 	@Override
-	protected Configuracion asEntity(ConfiguracionDto model, Configuracion entity) {
+	protected Configuracion mergeEntity(ConfiguracionDto model, Configuracion entity) {
 		val grupoConfiguracion = grupoConfiguracionRepository.getOne(model.getIdGrupoConfiguracion());
 
 		entity.setGrupoConfiguracion(grupoConfiguracion);

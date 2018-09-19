@@ -47,7 +47,7 @@ public class TipoRutaCrudServiceImpl extends CrudServiceImpl<TipoRuta, TipoRutaD
 	}
 
 	@Override
-	protected TipoRuta asEntity(TipoRutaDto model, TipoRuta entity) {
+	protected TipoRuta mergeEntity(TipoRutaDto model, TipoRuta entity) {
 
 		entity.setCodigo(model.getCodigo());
 		entity.setNombre(model.getNombre());

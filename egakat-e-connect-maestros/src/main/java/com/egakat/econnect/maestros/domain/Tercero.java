@@ -14,7 +14,7 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.DynamicUpdate;
 
-import com.egakat.commons.domain.BusinessEntity;
+import com.egakat.commons.domain.AuditableEntity;
 import com.egakat.core.domain.InactivableObject;
 import com.egakat.econnect.maestros.enums.IdentificacionType;
 
@@ -31,7 +31,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AttributeOverride(name = "id", column = @Column(name = "id_tercero"))
-public class Tercero extends BusinessEntity<Long> implements InactivableObject {
+public class Tercero extends AuditableEntity<Long> implements InactivableObject {
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "id_cliente", nullable = false)

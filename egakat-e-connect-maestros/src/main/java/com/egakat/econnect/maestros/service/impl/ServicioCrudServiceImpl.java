@@ -47,7 +47,7 @@ public class ServicioCrudServiceImpl extends CrudServiceImpl<Servicio, ServicioD
 	}
 
 	@Override
-	protected Servicio asEntity(ServicioDto model, Servicio entity) {
+	protected Servicio mergeEntity(ServicioDto model, Servicio entity) {
 
 		entity.setCodigo(model.getCodigo());
 		entity.setNombre(model.getNombre());

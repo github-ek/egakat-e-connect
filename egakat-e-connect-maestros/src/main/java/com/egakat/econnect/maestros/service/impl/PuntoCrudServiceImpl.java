@@ -63,7 +63,7 @@ public class PuntoCrudServiceImpl extends CrudServiceImpl<Punto, PuntoDto, Long>
 	}
 
 	@Override
-	protected Punto asEntity(PuntoDto model, Punto entity) {
+	protected Punto mergeEntity(PuntoDto model, Punto entity) {
 		val tercero = terceroRepository.getOne(model.getIdTercero());
 		val ciudad = ciudadRepository.getOne(model.getIdCiudad());
 		val direccion = direccionRepository.getOne(model.getIdDireccion());
