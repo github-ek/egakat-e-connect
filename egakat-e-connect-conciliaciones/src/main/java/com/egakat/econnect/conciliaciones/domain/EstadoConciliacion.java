@@ -10,7 +10,7 @@ import javax.validation.constraints.Size;
 import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.format.annotation.NumberFormat;
 
-import com.egakat.commons.domain.AuditableEntity;
+import com.egakat.core.data.jpa.domain.AuditableEntity;
 import com.egakat.core.domain.InactivableObject;
 import com.egakat.core.domain.ObjectWithCode;
 import com.egakat.core.domain.SortableObject;
@@ -25,10 +25,11 @@ import lombok.ToString;
 @DynamicUpdate
 @Getter
 @Setter
-@ToString(callSuper= true)
+@ToString(callSuper = true)
 @NoArgsConstructor
 @AttributeOverride(name = "id", column = @Column(name = "id_estado_conciliacion"))
-public class EstadoConciliacion extends AuditableEntity<Long> implements ObjectWithCode<Long>, SortableObject, InactivableObject {
+public class EstadoConciliacion extends AuditableEntity<Long>
+		implements ObjectWithCode<Long>, SortableObject, InactivableObject {
 
 	@Column(name = "codigo")
 	@Size(max = 20)

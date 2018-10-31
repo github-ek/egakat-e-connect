@@ -36,26 +36,23 @@ public class BodegaCrudServiceImpl extends CrudServiceImpl<Bodega, BodegaDto, Lo
 	protected BodegaDto asModel(Bodega entity) {
 		Long idDireccion = (entity.getObjetoDireccion() != null) ? entity.getObjetoDireccion().getId() : null;
 
-		// @formatter:off
-		val result = BodegaDto
-				.builder()
-				.id(entity.getId())
-				.codigo(entity.getCodigo())
-				.nombre(entity.getNombre())
-				.idCiudad(entity.getCiudad().getId())
-				.direccion(entity.getDireccion())
-				.idDireccion(idDireccion)
-				.ordinal(entity.getOrdinal())
-				.activo(entity.isActivo())
-				.version(entity.getVersion())
-				.creadoPor(entity.getCreadoPor())
-				.fechaCreacion(entity.getFechaCreacion())
-				.modificadoPor(entity.getModificadoPor())
-				.fechaModificacion(entity.getFechaModificacion())
+		val result = newModel();
+		mapModel(entity, result);
 
-				.build();
-		// @formatter:on
+		result.setCodigo(entity.getCodigo());
+		result.setNombre(entity.getNombre());
+		result.setIdCiudad(entity.getCiudad().getId());
+		result.setDireccion(entity.getDireccion());
+		result.setIdDireccion(idDireccion);
+		result.setOrdinal(entity.getOrdinal());
+		result.setActivo(entity.isActivo());
+
 		return result;
+	}
+
+	@Override
+	protected BodegaDto newModel() {
+		return new BodegaDto();
 	}
 
 	@Override

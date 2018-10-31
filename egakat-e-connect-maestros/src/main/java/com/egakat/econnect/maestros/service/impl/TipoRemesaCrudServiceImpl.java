@@ -32,25 +32,22 @@ public class TipoRemesaCrudServiceImpl extends CrudServiceImpl<TipoRemesa, TipoR
 
 	@Override
 	protected TipoRemesaDto asModel(TipoRemesa entity) {
-		// @formatter:off
-		val result = TipoRemesaDto
-				.builder()
-				.id(entity.getId())
-				.idUnidadNegocio(entity.getUnidadNegocio().getId())
-				.codigo(entity.getCodigo())
-				.nombre(entity.getNombre())
-				.descripcion(entity.getDescripcion())
-				.ordinal(entity.getOrdinal())
-				.activo(entity.isActivo())
-				.version(entity.getVersion())
-				.creadoPor(entity.getCreadoPor())
-				.fechaCreacion(entity.getFechaCreacion())
-				.modificadoPor(entity.getModificadoPor())
-				.fechaModificacion(entity.getFechaModificacion())
+		val result = newModel();
+		mapModel(entity, result);
 
-				.build();
-		// @formatter:on
+		result.setIdUnidadNegocio(entity.getUnidadNegocio().getId());
+		result.setCodigo(entity.getCodigo());
+		result.setNombre(entity.getNombre());
+		result.setDescripcion(entity.getDescripcion());
+		result.setOrdinal(entity.getOrdinal());
+		result.setActivo(entity.isActivo());
+
 		return result;
+	}
+
+	@Override
+	protected TipoRemesaDto newModel() {
+		return new TipoRemesaDto();
 	}
 
 	@Override

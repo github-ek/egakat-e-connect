@@ -32,25 +32,22 @@ public class LineaNegocioCrudServiceImpl extends CrudServiceImpl<LineaNegocio, L
 
 	@Override
 	protected LineaNegocioDto asModel(LineaNegocio entity) {
-		// @formatter:off
-		val result = LineaNegocioDto
-				.builder()
-				.id(entity.getId())
-				.idUnidadNegocio(entity.getUnidadNegocio().getId())
-				.codigo(entity.getCodigo())
-				.nombre(entity.getNombre())
-				.descripcion(entity.getDescripcion())
-				.ordinal(entity.getOrdinal())
-				.activo(entity.isActivo())
-				.version(entity.getVersion())
-				.creadoPor(entity.getCreadoPor())
-				.fechaCreacion(entity.getFechaCreacion())
-				.modificadoPor(entity.getModificadoPor())
-				.fechaModificacion(entity.getFechaModificacion())
+		val result = newModel();
+		mapModel(entity, result);
 
-				.build();
-		// @formatter:on
+		result.setIdUnidadNegocio(entity.getUnidadNegocio().getId());
+		result.setCodigo(entity.getCodigo());
+		result.setNombre(entity.getNombre());
+		result.setDescripcion(entity.getDescripcion());
+		result.setOrdinal(entity.getOrdinal());
+		result.setActivo(entity.isActivo());
+
 		return result;
+	}
+
+	@Override
+	protected LineaNegocioDto newModel() {
+		return new LineaNegocioDto();
 	}
 
 	@Override

@@ -47,7 +47,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.egakat</groupId>
-			<artifactId>egakat-commons-dto</artifactId>
+			<artifactId>egakat-core-domain</artifactId>
 		</dependency>
 	</dependencies>
 </project>

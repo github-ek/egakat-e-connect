@@ -25,26 +25,23 @@ public class EmpresaCrudServiceImpl extends CrudServiceImpl<Empresa, EmpresaDto,
 
 	@Override
 	protected EmpresaDto asModel(Empresa entity) {
-		// @formatter:off
-		val result = EmpresaDto
-				.builder()
-				.id(entity.getId())
-				.codigo(entity.getCodigo())
-				.nombre(entity.getNombre())
-				.tipoIdentificacion(entity.getTipoIdentificacion())
-				.numeroIdentificacion(entity.getNumeroIdentificacion())
-				.digitoVerificacion(entity.getDigitoVerificacion())
-				.ordinal(entity.getOrdinal())
-				.activo(entity.isActivo())
-				.version(entity.getVersion())
-				.creadoPor(entity.getCreadoPor())
-				.fechaCreacion(entity.getFechaCreacion())
-				.modificadoPor(entity.getModificadoPor())
-				.fechaModificacion(entity.getFechaModificacion())
+		val result = newModel();
+		mapModel(entity, result);
 
-				.build();
-		// @formatter:on
+		result.setCodigo(entity.getCodigo());
+		result.setNombre(entity.getNombre());
+		result.setTipoIdentificacion(entity.getTipoIdentificacion());
+		result.setNumeroIdentificacion(entity.getNumeroIdentificacion());
+		result.setDigitoVerificacion(entity.getDigitoVerificacion());
+		result.setOrdinal(entity.getOrdinal());
+		result.setActivo(entity.isActivo());
+
 		return result;
+	}
+
+	@Override
+	protected EmpresaDto newModel() {
+		return new EmpresaDto();
 	}
 
 	@Override
@@ -73,4 +70,5 @@ public class EmpresaCrudServiceImpl extends CrudServiceImpl<Empresa, EmpresaDto,
 		val result = asModel(optional);
 		return result;
 	}
+
 }

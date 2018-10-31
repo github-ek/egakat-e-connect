@@ -1,16 +1,13 @@
 package com.egakat.econnect.maestros.dto;
 
-import java.time.LocalDateTime;
-
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.egakat.commons.dto.BusinessEntityDto;
 import com.egakat.core.domain.InactivableObject;
 import com.egakat.core.domain.ObjectWithCode;
+import com.egakat.core.dto.AuditableEntityDto;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,7 +18,7 @@ import lombok.ToString;
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductoDto extends BusinessEntityDto<Long> implements ObjectWithCode<Long>, InactivableObject {
+public class ProductoDto extends AuditableEntityDto<Long> implements ObjectWithCode<Long>, InactivableObject {
 
 	private long idCliente;
 
@@ -38,16 +35,4 @@ public class ProductoDto extends BusinessEntityDto<Long> implements ObjectWithCo
 	private String tipoCobro;
 
 	private boolean activo;
-
-	@Builder
-	public ProductoDto(Long id, int version, String creadoPor, LocalDateTime fechaCreacion, String modificadoPor,
-			LocalDateTime fechaModificacion, long idCliente, @NotNull @Size(max = 50) String codigo,
-			@NotNull @Size(max = 250) String nombre, @NotNull @Size(max = 50) String tipoCobro, boolean activo) {
-		super(id, version, fechaCreacion, creadoPor, fechaModificacion, modificadoPor);
-		this.idCliente = idCliente;
-		this.codigo = codigo;
-		this.nombre = nombre;
-		this.tipoCobro = tipoCobro;
-		this.activo = activo;
-	}
 }

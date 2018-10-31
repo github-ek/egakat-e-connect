@@ -39,28 +39,25 @@ public class ClienteCrudServiceImpl extends CrudServiceImpl<Cliente, ClienteDto,
 
 	@Override
 	protected ClienteDto asModel(Cliente entity) {
-		// @formatter:off
-		val result = ClienteDto
-				.builder()
-				.id(entity.getId())
-				.codigo(entity.getCodigo())
-				.nombre(entity.getNombre())
-				.tipoIdentificacion(entity.getTipoIdentificacion())
-				.numeroIdentificacion(entity.getNumeroIdentificacion())
-				.digitoVerificacion(entity.getDigitoVerificacion())
-				.idEmpresa(entity.getEmpresa().getId())
-				.codigoAlternoWms(entity.getCodigoAlternoWms())
-				.habilitadoConciliacion(entity.isHabilitadoConciliacion())
-				.activo(entity.isActivo())
-				.version(entity.getVersion())
-				.creadoPor(entity.getCreadoPor())
-				.fechaCreacion(entity.getFechaCreacion())
-				.modificadoPor(entity.getModificadoPor())
-				.fechaModificacion(entity.getFechaModificacion())
+		val result = newModel();
+		mapModel(entity, result);
 
-				.build();
-		// @formatter:on
+		result.setCodigo(entity.getCodigo());
+		result.setNombre(entity.getNombre());
+		result.setTipoIdentificacion(entity.getTipoIdentificacion());
+		result.setNumeroIdentificacion(entity.getNumeroIdentificacion());
+		result.setDigitoVerificacion(entity.getDigitoVerificacion());
+		result.setIdEmpresa(entity.getEmpresa().getId());
+		result.setCodigoAlternoWms(entity.getCodigoAlternoWms());
+		result.setHabilitadoConciliacion(entity.isHabilitadoConciliacion());
+		result.setActivo(entity.isActivo());
+
 		return result;
+	}
+
+	@Override
+	protected ClienteDto newModel() {
+		return new ClienteDto();
 	}
 
 	@Override
@@ -125,4 +122,5 @@ public class ClienteCrudServiceImpl extends CrudServiceImpl<Cliente, ClienteDto,
 		val result = servicioCrudService.findAllById(ids);
 		return result;
 	}
+
 }

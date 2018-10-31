@@ -26,24 +26,21 @@ public class UnidadNegocioCrudServiceImpl extends CrudServiceImpl<UnidadNegocio,
 
 	@Override
 	protected UnidadNegocioDto asModel(UnidadNegocio entity) {
-		// @formatter:off
-		val result = UnidadNegocioDto
-				.builder()
-				.id(entity.getId())
-				.codigo(entity.getCodigo())
-				.nombre(entity.getNombre())
-				.descripcion(entity.getDescripcion())
-				.ordinal(entity.getOrdinal())
-				.activo(entity.isActivo())
-				.version(entity.getVersion())
-				.creadoPor(entity.getCreadoPor())
-				.fechaCreacion(entity.getFechaCreacion())
-				.modificadoPor(entity.getModificadoPor())
-				.fechaModificacion(entity.getFechaModificacion())
+		val result = newModel();
+		mapModel(entity, result);
 
-				.build();
-		// @formatter:on
+		result.setCodigo(entity.getCodigo());
+		result.setNombre(entity.getNombre());
+		result.setDescripcion(entity.getDescripcion());
+		result.setOrdinal(entity.getOrdinal());
+		result.setActivo(entity.isActivo());
+
 		return result;
+	}
+	
+	@Override
+	protected UnidadNegocioDto newModel() {
+		return new UnidadNegocioDto();
 	}
 
 	@Override

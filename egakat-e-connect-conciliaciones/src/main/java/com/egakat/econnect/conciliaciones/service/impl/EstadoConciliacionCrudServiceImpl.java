@@ -16,7 +16,7 @@ import lombok.val;
 @Service
 public class EstadoConciliacionCrudServiceImpl extends CrudServiceImpl<EstadoConciliacion, EstadoConciliacionDto, Long>
 		implements EstadoConciliacionCrudService {
-	
+
 	@Autowired
 	private EstadoConciliacionRepository repository;
 
@@ -27,24 +27,21 @@ public class EstadoConciliacionCrudServiceImpl extends CrudServiceImpl<EstadoCon
 
 	@Override
 	protected EstadoConciliacionDto asModel(EstadoConciliacion entity) {
-		// @formatter:off
-		val result = EstadoConciliacionDto
-				.builder()
-				.id(entity.getId())
-				.codigo(entity.getCodigo())
-				.nombre(entity.getNombre())
-				.descripcion(entity.getDescripcion())
-				.ordinal(entity.getOrdinal())
-				.activo(entity.isActivo())
-				.version(entity.getVersion())
-				.creadoPor(entity.getCreadoPor())
-				.fechaCreacion(entity.getFechaCreacion())
-				.modificadoPor(entity.getModificadoPor())
-				.fechaModificacion(entity.getFechaModificacion())
+		val result = newModel();
+		mapModel(entity, result);
 
-				.build();
-		// @formatter:on
+		result.setCodigo(entity.getCodigo());
+		result.setNombre(entity.getNombre());
+		result.setDescripcion(entity.getDescripcion());
+		result.setOrdinal(entity.getOrdinal());
+		result.setActivo(entity.isActivo());
+
 		return result;
+	}
+
+	@Override
+	protected EstadoConciliacionDto newModel() {
+		return new EstadoConciliacionDto();
 	}
 
 	@Override

@@ -32,28 +32,25 @@ public class CiudadCrudServiceImpl extends CrudServiceImpl<Ciudad, CiudadDto, Lo
 
 	@Override
 	protected CiudadDto asModel(Ciudad entity) {
-		// @formatter:off
-		val result = CiudadDto
-				.builder()
-				.id(entity.getId())
-				.idDepartamento(entity.getDepartamento().getId())
-				.codigo(entity.getCodigo())
-				.codigoCentroPoblado(entity.getCodigoCentroPoblado())
-				.nombre(entity.getNombre())
-				.nombreAlterno(entity.getNombreAlterno())
-				.cx(entity.getCx())
-				.cy(entity.getCy())
-				.ordinal(entity.getOrdinal())
-				.activo(entity.isActivo())
-				.version(entity.getVersion())
-				.creadoPor(entity.getCreadoPor())
-				.fechaCreacion(entity.getFechaCreacion())
-				.modificadoPor(entity.getModificadoPor())
-				.fechaModificacion(entity.getFechaModificacion())
+		val result = newModel();
+		mapModel(entity, result);
 
-				.build();
-		// @formatter:on
+		result.setIdDepartamento(entity.getDepartamento().getId());
+		result.setCodigo(entity.getCodigo());
+		result.setCodigoCentroPoblado(entity.getCodigoCentroPoblado());
+		result.setNombre(entity.getNombre());
+		result.setNombreAlterno(entity.getNombreAlterno());
+		result.setCx(entity.getCx());
+		result.setCy(entity.getCy());
+		result.setOrdinal(entity.getOrdinal());
+		result.setActivo(entity.isActivo());
+
 		return result;
+	}
+
+	@Override
+	protected CiudadDto newModel() {
+		return new CiudadDto();
 	}
 
 	@Override

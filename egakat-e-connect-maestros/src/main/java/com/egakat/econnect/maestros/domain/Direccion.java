@@ -16,7 +16,7 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.DynamicUpdate;
 
-import com.egakat.commons.domain.AuditableEntity;
+import com.egakat.core.data.jpa.domain.AuditableEntity;
 import com.egakat.core.domain.InactivableObject;
 import com.egakat.econnect.maestros.enums.EstadoDireccionType;
 import com.egakat.econnect.maestros.enums.GeoCodificacionType;

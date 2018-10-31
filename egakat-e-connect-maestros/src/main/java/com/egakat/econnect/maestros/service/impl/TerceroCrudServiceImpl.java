@@ -31,26 +31,23 @@ public class TerceroCrudServiceImpl extends CrudServiceImpl<Tercero, TerceroDto,
 
 	@Override
 	protected TerceroDto asModel(Tercero entity) {
-		// @formatter:off
-		val result = TerceroDto
-				.builder()
-				.id(entity.getId())
-				.idCliente(entity.getCliente().getId())
-				.tipoIdentificacion(entity.getTipoIdentificacion())
-				.numeroIdentificacion(entity.getNumeroIdentificacion())
-				.nombre(entity.getNombre())
-				.activo(entity.isActivo())
-				.version(entity.getVersion())
-				.creadoPor(entity.getCreadoPor())
-				.fechaCreacion(entity.getFechaCreacion())
-				.modificadoPor(entity.getModificadoPor())
-				.fechaModificacion(entity.getFechaModificacion())
+		val result = newModel();
+		mapModel(entity, result);
 
-				.build();
-		// @formatter:on
+		result.setIdCliente(entity.getCliente().getId());
+		result.setTipoIdentificacion(entity.getTipoIdentificacion());
+		result.setNumeroIdentificacion(entity.getNumeroIdentificacion());
+		result.setNombre(entity.getNombre());
+		result.setActivo(entity.isActivo());
+
 		return result;
 	}
 
+	@Override
+	protected TerceroDto newModel() {
+		return new TerceroDto();
+	}
+	
 	@Override
 	protected Tercero mergeEntity(TerceroDto model, Tercero entity) {
 		val cliente = clienteRepository.getOne(model.getIdCliente());

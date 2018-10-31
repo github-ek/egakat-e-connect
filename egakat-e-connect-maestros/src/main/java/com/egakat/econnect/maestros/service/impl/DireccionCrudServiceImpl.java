@@ -36,33 +36,30 @@ public class DireccionCrudServiceImpl extends CrudServiceImpl<Direccion, Direcci
 
 	@Override
 	protected DireccionDto asModel(Direccion entity) {
-		// @formatter:off
-		val result = DireccionDto
-				.builder()
-				.id(entity.getId())
-				.estado(entity.getEstado())
-				.idCliente(entity.getCliente().getId())
-				.terceroCodigoAlterno(entity.getTerceroCodigoAlterno())
-				.terceroNombre(entity.getTerceroNombre())
-				.tipoGeoCodificacion(entity.getTipoGeoCodificacion())
-				.idCiudad(entity.getCiudad().getId())
-				.direccion(entity.getDireccion())
-				.direccionEstandarizada(entity.getDireccionEstandarizada())
-				.cx(entity.getCx())
-				.cy(entity.getCy())
-				.zona(entity.getZona())
-				.localidad(entity.getLocalidad())
-				.barrio(entity.getBarrio())
-				.activo(entity.isActivo())
-				.version(entity.getVersion())
-				.creadoPor(entity.getCreadoPor())
-				.fechaCreacion(entity.getFechaCreacion())
-				.modificadoPor(entity.getModificadoPor())
-				.fechaModificacion(entity.getFechaModificacion())
+		val result = newModel();
+		mapModel(entity, result);
 
-				.build();
-		// @formatter:on
+		result.setEstado(entity.getEstado());
+		result.setIdCliente(entity.getCliente().getId());
+		result.setTerceroCodigoAlterno(entity.getTerceroCodigoAlterno());
+		result.setTerceroNombre(entity.getTerceroNombre());
+		result.setTipoGeoCodificacion(entity.getTipoGeoCodificacion());
+		result.setIdCiudad(entity.getCiudad().getId());
+		result.setDireccion(entity.getDireccion());
+		result.setDireccionEstandarizada(entity.getDireccionEstandarizada());
+		result.setCx(entity.getCx());
+		result.setCy(entity.getCy());
+		result.setZona(entity.getZona());
+		result.setLocalidad(entity.getLocalidad());
+		result.setBarrio(entity.getBarrio());
+		result.setActivo(entity.isActivo());
+
 		return result;
+	}
+
+	@Override
+	protected DireccionDto newModel() {
+		return new DireccionDto();
 	}
 
 	@Override
@@ -111,4 +108,5 @@ public class DireccionCrudServiceImpl extends CrudServiceImpl<Direccion, Direcci
 		val result = asModel(entity);
 		return Optional.of(result);
 	}
+
 }

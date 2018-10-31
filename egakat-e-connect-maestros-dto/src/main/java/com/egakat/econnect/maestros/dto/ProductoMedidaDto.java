@@ -1,6 +1,5 @@
 package com.egakat.econnect.maestros.dto;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 
 import javax.validation.constraints.NotNull;
@@ -21,9 +20,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ProductoMedidaDto implements Serializable {
-
-	private static final long serialVersionUID = 1L;
+public class ProductoMedidaDto {
 
 	private long idProducto;
 

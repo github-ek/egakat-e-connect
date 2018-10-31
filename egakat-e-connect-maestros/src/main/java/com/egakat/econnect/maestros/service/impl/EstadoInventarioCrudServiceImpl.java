@@ -25,23 +25,26 @@ public class EstadoInventarioCrudServiceImpl extends CrudServiceImpl<EstadoInven
 
 	@Override
 	protected EstadoInventarioDto asModel(EstadoInventario entity) {
-		// @formatter:off
-		val result = EstadoInventarioDto
-				.builder()
-				.id(entity.getId())
-				.nombre(entity.getNombre())
-				.descripcion(entity.getDescripcion())
-				.ordinal(entity.getOrdinal())
-				.activo(entity.isActivo())
-				.version(entity.getVersion())
-				.creadoPor(entity.getCreadoPor())
-				.fechaCreacion(entity.getFechaCreacion())
-				.modificadoPor(entity.getModificadoPor())
-				.fechaModificacion(entity.getFechaModificacion())
+		val result = newModel();
 
-				.build();
-		// @formatter:on
+		result.setId(entity.getId());
+		result.setVersion(entity.getVersion());
+		result.setCreadoPor(entity.getCreadoPor());
+		result.setFechaCreacion(entity.getFechaCreacion());
+		result.setModificadoPor(entity.getModificadoPor());
+		result.setFechaModificacion(entity.getFechaModificacion());
+
+		result.setNombre(entity.getNombre());
+		result.setDescripcion(entity.getDescripcion());
+		result.setOrdinal(entity.getOrdinal());
+		result.setActivo(entity.isActivo());
+
 		return result;
+	}
+
+	@Override
+	protected EstadoInventarioDto newModel() {
+		return new EstadoInventarioDto();
 	}
 
 	@Override
@@ -60,4 +63,5 @@ public class EstadoInventarioCrudServiceImpl extends CrudServiceImpl<EstadoInven
 	protected EstadoInventario newEntity() {
 		return new EstadoInventario();
 	}
+
 }

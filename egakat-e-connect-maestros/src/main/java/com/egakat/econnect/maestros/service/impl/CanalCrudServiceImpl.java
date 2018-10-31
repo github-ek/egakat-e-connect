@@ -27,25 +27,22 @@ public class CanalCrudServiceImpl extends CrudServiceImpl<Canal, CanalDto, Long>
 
 	@Override
 	protected CanalDto asModel(Canal entity) {
-		// @formatter:off
-		val result = CanalDto
-				.builder()
-				.id(entity.getId())
-				.codigo(entity.getCodigo())
-				.nombre(entity.getNombre())
-				.descripcion(entity.getDescripcion())
-				.predeterminado(entity.isPredeterminado())
-				.ordinal(entity.getOrdinal())
-				.activo(entity.isActivo())
-				.version(entity.getVersion())
-				.creadoPor(entity.getCreadoPor())
-				.fechaCreacion(entity.getFechaCreacion())
-				.modificadoPor(entity.getModificadoPor())
-				.fechaModificacion(entity.getFechaModificacion())
+		val result = newModel();
+		mapModel(entity, result);
 
-				.build();
-		// @formatter:on
+		result.setCodigo(entity.getCodigo());
+		result.setNombre(entity.getNombre());
+		result.setDescripcion(entity.getDescripcion());
+		result.setPredeterminado(entity.isPredeterminado());
+		result.setOrdinal(entity.getOrdinal());
+		result.setActivo(entity.isActivo());
+
 		return result;
+	}
+
+	@Override
+	protected CanalDto newModel() {
+		return new CanalDto();
 	}
 
 	@Override

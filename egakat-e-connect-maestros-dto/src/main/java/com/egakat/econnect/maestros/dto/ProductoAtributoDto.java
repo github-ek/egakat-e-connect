@@ -1,7 +1,5 @@
 package com.egakat.econnect.maestros.dto;
 
-import java.io.Serializable;
-
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -18,9 +16,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ProductoAtributoDto implements Serializable {
-
-	private static final long serialVersionUID = 1L;
+public class ProductoAtributoDto {
 	
 	private long idProducto;
 	

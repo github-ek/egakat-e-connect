@@ -40,11 +40,6 @@
 			</dependency>
 			<dependency>
 				<groupId>com.egakat</groupId>
-				<artifactId>egakat-core-configuration</artifactId>
-				<version>${egakat.core.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.egakat</groupId>
 				<artifactId>egakat-core-domain</artifactId>
 				<version>${egakat.core.version}</version>
 			</dependency>
@@ -68,27 +63,17 @@
 				<artifactId>egakat-core-web-client</artifactId>
 				<version>${egakat.core.version}</version>
 			</dependency>
-			<dependency>
-				<groupId>com.egakat</groupId>
-				<artifactId>egakat-commons-domain</artifactId>
-				<version>${egakat.core.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.egakat</groupId>
-				<artifactId>egakat-commons-dto</artifactId>
-				<version>${egakat.core.version}</version>
-			</dependency>
 		</dependencies>
 	</dependencyManagement>
 	<modules>
 		<module>egakat-e-connect-conciliaciones</module>
-		<module>egakat-e-connect-conciliaciones-client</module>
+		
 		<module>egakat-e-connect-conciliaciones-dto</module>
 		<module>egakat-e-connect-config</module>
-		<module>egakat-e-connect-config-client</module>
+		
 		<module>egakat-e-connect-config-dto</module>
 		<module>egakat-e-connect-maestros</module>
-		<module>egakat-e-connect-maestros-client</module>
+		
 		<module>egakat-e-connect-maestros-dto</module>
 	</modules>
 </project>

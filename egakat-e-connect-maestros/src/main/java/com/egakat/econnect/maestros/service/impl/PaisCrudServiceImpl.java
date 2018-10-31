@@ -26,27 +26,24 @@ public class PaisCrudServiceImpl extends CrudServiceImpl<Pais, PaisDto, Long> im
 
 	@Override
 	protected PaisDto asModel(Pais entity) {
-		// @formatter:off
-		val result = PaisDto
-				.builder()
-				.id(entity.getId())
-				.codigo(entity.getCodigo())
-				.nombre(entity.getNombre())
-				.cx(entity.getCx())
-				.cy(entity.getCy())
-				.ordinal(entity.getOrdinal())
-				.activo(entity.isActivo())
-				.version(entity.getVersion())
-				.creadoPor(entity.getCreadoPor())
-				.fechaCreacion(entity.getFechaCreacion())
-				.modificadoPor(entity.getModificadoPor())
-				.fechaModificacion(entity.getFechaModificacion())
+		val result = newModel();
+		mapModel(entity, result);
 
-				.build();
-		// @formatter:on
+		result.setCodigo(entity.getCodigo());
+		result.setNombre(entity.getNombre());
+		result.setCx(entity.getCx());
+		result.setCy(entity.getCy());
+		result.setOrdinal(entity.getOrdinal());
+		result.setActivo(entity.isActivo());
+
 		return result;
 	}
 
+	@Override
+	protected PaisDto newModel() {
+		return new PaisDto();
+	}
+	
 	@Override
 	protected Pais mergeEntity(PaisDto model, Pais entity) {
 

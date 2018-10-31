@@ -41,23 +41,20 @@ public class ProductoCrudServiceImpl extends CrudServiceImpl<Producto, ProductoD
 
 	@Override
 	protected ProductoDto asModel(Producto entity) {
-		// @formatter:off
-		val result = ProductoDto
-				.builder()
-				.id(entity.getId())
-				.idCliente(entity.getCliente().getId())
-				.codigo(entity.getCodigo())
-				.nombre(entity.getNombre())
-				.activo(entity.isActivo())
-				.version(entity.getVersion())
-				.creadoPor(entity.getCreadoPor())
-				.fechaCreacion(entity.getFechaCreacion())
-				.modificadoPor(entity.getModificadoPor())
-				.fechaModificacion(entity.getFechaModificacion())
+		val result = newModel();
+		mapModel(entity, result);
 
-				.build();
-		// @formatter:on
+		result.setIdCliente(entity.getCliente().getId());
+		result.setCodigo(entity.getCodigo());
+		result.setNombre(entity.getNombre());
+		result.setActivo(entity.isActivo());
+		
 		return result;
+	}
+	
+	@Override
+	protected ProductoDto newModel() {
+		return new ProductoDto();
 	}
 
 	@Override
@@ -156,14 +153,14 @@ public class ProductoCrudServiceImpl extends CrudServiceImpl<Producto, ProductoD
 	@Override
 	public List<ProductoMedidaDto> findAllMedidasByProductoId(long id) {
 		val entity = findOneById(id);
-		
+
 		// @formatter:off
 		val result = entity.getMedidas()
 				.stream()
 				.map(a -> mapMedidaToDto(id, a))
 				.collect(toList());
 		// @formatter:on
-		
+
 		return result;
 	}
 

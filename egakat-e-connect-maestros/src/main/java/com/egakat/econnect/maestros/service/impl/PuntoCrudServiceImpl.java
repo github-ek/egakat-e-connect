@@ -40,26 +40,23 @@ public class PuntoCrudServiceImpl extends CrudServiceImpl<Punto, PuntoDto, Long>
 	@Override
 	protected PuntoDto asModel(Punto entity) {
 		Long idDireccion = (entity.getObjetoDireccion() != null) ? entity.getObjetoDireccion().getId() : null;
-		// @formatter:off
-		val result = PuntoDto
-				.builder()
-				.id(entity.getId())
-				.idTercero(entity.getTercero().getId())
-				.codigo(entity.getCodigo())
-				.nombre(entity.getNombre())
-				.idCiudad(entity.getCiudad().getId())
-				.direccion(entity.getDireccion())
-				.idDireccion(idDireccion)
-				.activo(entity.isActivo())
-				.version(entity.getVersion())
-				.creadoPor(entity.getCreadoPor())
-				.fechaCreacion(entity.getFechaCreacion())
-				.modificadoPor(entity.getModificadoPor())
-				.fechaModificacion(entity.getFechaModificacion())
+		val result = newModel();
+		mapModel(entity, result);
 
-				.build();
-		// @formatter:on
+		result.setIdTercero(entity.getTercero().getId());
+		result.setCodigo(entity.getCodigo());
+		result.setNombre(entity.getNombre());
+		result.setIdCiudad(entity.getCiudad().getId());
+		result.setDireccion(entity.getDireccion());
+		result.setIdDireccion(idDireccion);
+		result.setActivo(entity.isActivo());
+
 		return result;
+	}
+	
+	@Override
+	protected PuntoDto newModel() {
+		return new PuntoDto();
 	}
 
 	@Override

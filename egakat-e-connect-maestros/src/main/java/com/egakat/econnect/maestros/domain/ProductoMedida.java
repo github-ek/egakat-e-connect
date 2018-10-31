@@ -11,7 +11,6 @@ import javax.validation.constraints.Size;
 import org.springframework.format.annotation.NumberFormat;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -23,7 +22,6 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class ProductoMedida implements Serializable {
 
 	private static final long serialVersionUID = 1L;

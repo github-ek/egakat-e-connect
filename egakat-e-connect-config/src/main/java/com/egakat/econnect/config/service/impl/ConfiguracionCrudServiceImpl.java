@@ -32,23 +32,19 @@ public class ConfiguracionCrudServiceImpl extends CrudServiceImpl<Configuracion,
 
 	@Override
 	protected ConfiguracionDto asModel(Configuracion entity) {
-		// @formatter:off
-		val result = ConfiguracionDto
-				.builder()
-				.id(entity.getId())
-				.idGrupoConfiguracion(entity.getGrupoConfiguracion().getId())
-				.codigo(entity.getCodigo())
-				.valor(entity.getValor())
-				.activo(entity.isActivo())
-				.version(entity.getVersion())
-				.creadoPor(entity.getCreadoPor())
-				.fechaCreacion(entity.getFechaCreacion())
-				.modificadoPor(entity.getModificadoPor())
-				.fechaModificacion(entity.getFechaModificacion())
-
-				.build();
-		// @formatter:on
+		val result = newModel();
+		mapModel(entity, result);
+		
+		result.setIdGrupoConfiguracion(entity.getGrupoConfiguracion().getId());
+		result.setCodigo(entity.getCodigo());
+		result.setValor(entity.getValor());
+		result.setActivo(entity.isActivo());
 		return result;
+	}
+
+	@Override
+	protected ConfiguracionDto newModel() {
+		return new ConfiguracionDto();
 	}
 
 	@Override
