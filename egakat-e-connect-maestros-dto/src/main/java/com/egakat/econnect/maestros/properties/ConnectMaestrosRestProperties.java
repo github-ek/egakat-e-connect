@@ -1,4 +1,4 @@
-package com.egakat.econnect.conciliaciones.properties;
+package com.egakat.econnect.maestros.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.validation.annotation.Validated;
@@ -10,15 +10,15 @@ import lombok.Setter;
 import lombok.ToString;
 
 
-@ConfigurationProperties(prefix = RestPropertiesImpl.CONFIGURATION_PROPERTIES)
+@ConfigurationProperties(prefix = ConnectMaestrosRestProperties.CONFIGURATION_PROPERTIES)
 @Getter
 @Setter
 @ToString
 @Validated
-public class RestPropertiesImpl implements RestProperties {
+public class ConnectMaestrosRestProperties implements RestProperties {
 
-	static final String CONFIGURATION_PROPERTIES = "com.egakat.econnect.econciliaciones.rest";
-	
+	static final String CONFIGURATION_PROPERTIES = "endpoint.econnect.maestros.rest";
+
 	private String basePath;
 	
 }
