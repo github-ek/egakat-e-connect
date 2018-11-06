@@ -76,5 +76,9 @@
 		
 		<module>egakat-e-connect-maestros-dto</module>
 		<module>egakat-e-connect-config-client</module>
+<<<<<<< HEAD
+=======
+		<module>egakat-e-connect-maestros-client</module>
+>>>>>>> 32f9b57826562a9c8bf24cd4345a8c8d71a21e7c
 	</modules>
 </project>
