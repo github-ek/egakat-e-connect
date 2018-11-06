@@ -3,7 +3,9 @@ package com.egakat.econnect.config.client.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.egakat.core.web.client.components.RestClient;
 import com.egakat.core.web.client.service.impl.LocalQueryServiceImpl;
+import com.egakat.econnect.config.client.components.ConnectConfigRestClient;
 import com.egakat.econnect.config.client.properties.ConnectConfigRestProperties;
 import com.egakat.econnect.config.client.service.api.ConfiguracionLocalService;
 import com.egakat.econnect.config.constants.RestConstants;
@@ -16,8 +18,16 @@ public class ConfiguracionLocalServiceImpl extends LocalQueryServiceImpl<Configu
 	@Autowired
 	private ConnectConfigRestProperties properties;
 
+	@Autowired
+	private ConnectConfigRestClient restClient;
+
 	protected ConnectConfigRestProperties getProperties() {
 		return properties;
+	}
+
+	@Override
+	protected RestClient getRestClient() {
+		return restClient;
 	}
 
 	@Override
