@@ -12,7 +12,6 @@ import lombok.ToString;
 
 @Component
 @ConfigurationProperties(prefix = ConnectConfigRestProperties.CONFIGURATION_PROPERTIES)
-
 @Getter
 @Setter
 @ToString
