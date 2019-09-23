@@ -72,5 +72,8 @@
 		<module>egakat-e-connect-maestros</module>
 		<module>egakat-e-connect-config-client</module>
 		<module>egakat-e-connect-maestros-client</module>
+		<module>egakat-e-connect-conciliaciones</module>
+		<module>egakat-e-connect-conciliaciones-client</module>
+		<module>egakat-e-connect-conciliaciones-dto</module>
 	</modules>
 </project>
